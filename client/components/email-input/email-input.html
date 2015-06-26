@@ -1,0 +1,13 @@
+<template name="emailInput">
+    <div class="emailInput">
+        <div v-class="error: validation.email.invalid" class="control-group">
+            <label class="control-label">Email:</label>
+
+            <div class="controls">
+                <input type="text" v-model="email" v-validate="email">
+                <span v-if="validation.email.dirty && validation.email.invalid">Invalid Email</span>
+                <span v-if="validation.email.valid">Valid Email</span>
+            </div>
+        </div>
+    </div>
+</template>
