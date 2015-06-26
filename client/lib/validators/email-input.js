@@ -1,6 +1,9 @@
 Template.emailInput.onRendered(function () {
   Vue.use(window['vue-validator'])
 
+  // suppress expression warnings
+  Vue.config.warnExpressionErrors = false
+
   new Vue({
     validator: {
       validates: {
