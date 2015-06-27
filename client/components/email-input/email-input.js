@@ -1,10 +1,19 @@
 Template.emailInput.onRendered(function () {
-  new Vue({
-    el: '.emailInput',
-    data: {
-      email: '',
-      message: '',
-    }
+  // Find the #id for each instance of this "component"
+  var componentIds = $('.js-component__email-input').map(function(index) {
+    return "#" + this.id;
+  }).toArray();
+  console.log(componentIds)
+
+  // Instantiate a new Vue instance per "component"
+  componentIds.forEach(function(componentId) {
+    new Vue({
+      el: componentId,
+      data: {
+        email: '',
+        message: '',
+      }
+    })
   })
 
 })
