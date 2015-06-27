@@ -32,4 +32,4 @@ Once we have the ids, we can then loop through them to instantiate a new Vue ins
       }
     })
   })
-```
+```	
