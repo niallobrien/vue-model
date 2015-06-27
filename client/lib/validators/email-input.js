@@ -1,16 +1,7 @@
 Template.emailInput.onRendered(function () {
-  // Init
-  Vue.use(window['vue-validator'])
-  // suppress expression warnings
-  Vue.config.warnExpressionErrors = false
-
-  // Find the #id for each instance of this "component"
-  var componentIds = $('.js-component__email-input').map(function(index) {
-    return "#" + this.id
-  }).toArray()
-
   // Instantiate a new Vue instance per "component"
-  componentIds.forEach(function(componentId) {
+  Vue.registerComponent('.js-component__email-input').forEach(function(componentId) {
+
     new Vue({
       validator: {
         validates: {
